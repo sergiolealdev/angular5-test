@@ -1,0 +1,94 @@
+
+.animate {
+  animation-duration: 0.5s;
+  animation-name: slidein;
+  opacity:1;
+}
+
+.animate2 {
+  animation-duration: 0.5s;
+  animation-name: slideout;
+  opacity:0;
+}
+
+.arrow {
+  animation: arrow-move infinite alternate 0.3s;
+  position :relative;
+}
+
+@keyframes arrow-move {
+  from {
+    left: 0px;
+  }
+
+  to {
+    left: 1%;
+  }
+}
+
+@keyframes slidein {
+  from {
+    opacity:0;
+  }
+
+  to {
+    opacity:1;
+  }
+}
+
+@keyframes slideout {
+  from {
+    opacity:1;
+  }
+
+  to {
+    opacity:0;
+
+  }
+}
+
+.square {
+  background: #2db34a;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 600px;
+  width: 600px;
+  text-align: center;
+  transition-property: background, border-radius;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+}
+
+.move_square {
+  /*background: #ff7b29;*/
+  border-radius: 50%;
+}
+
+.normal {
+  background: #2db34a;
+  border-radius: 0%;
+}
+
+.square2 {
+  background: #eed7a1;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 300px;
+  width: 300px;
+  position: relative;
+  left:400px;
+  text-align: center;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+}
+
+.move_square2 {
+  background: #f7efd2;
+  left:-400px;
+}
+
+.normal2 {
+  background: #eed7a1;
+  border-radius: 0%;
+}
+
