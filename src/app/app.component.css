@@ -1,4 +1,3 @@
-
 .animate {
   animation-duration: 0.5s;
   animation-name: slidein;
@@ -43,7 +42,6 @@
 
   to {
     opacity:0;
-
   }
 }
 
@@ -51,8 +49,8 @@
   background: #2db34a;
   border-radius: 6px;
   cursor: pointer;
-  height: 600px;
-  width: 600px;
+  height: 100px;
+  width: 100px;
   text-align: center;
   transition-property: background, border-radius;
   transition-duration: 0.5s;
@@ -91,4 +89,3 @@
   background: #eed7a1;
   border-radius: 0%;
 }
-

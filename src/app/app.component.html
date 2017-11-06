@@ -1,3 +1,5 @@
+<header-app></header-app>
+<router-outlet></router-outlet>
 <div class="square" [ngClass]="{'move_square': !isHidden, 'normal': isHidden}">
   <p  [ngClass]="{'animate': !isHidden, 'animate2': isHidden}">The Caterpillar and Alice looked at each other for some time in silence:
     at last the Caterpillar took the hookah out of its mouth, and addressed
@@ -8,4 +10,4 @@
 
 </div>
 
-<fa  class="arrow" name="arrow-right"  size="2x" style="color:red"></fa>
+<fa (click)="isHidden=!isHidden" class="arrow" name="arrow-right"  size="2x" style="color:red"></fa>
