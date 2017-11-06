@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #8a8583;
+}
+
+.panel {
+  margin-left:10px;
+  margin-right:10px;
+  background-color: #595a56;
+  min-height: 500px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  border-radius: 30px;
+  padding: 10px;
+}
+
+
+.square2 {
+  background:#33828d;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 300px;
+  width: 300px;
+  position: relative;
+  left:400px;
+  text-align: center;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+}
+
+.move_square2 {
+  background: #f7efd2;
+  left:-400px;
+}
+
+
+/*ANIMATIONS*/
+.animateSlideIn {
+  animation-duration: 2.5s;
+  animation-name: slidein;
+  opacity:1;
+}
+
+
+@keyframes slidein {
+  from {
+    opacity:0;
+  }
+
+  to {
+    opacity:1;
+  }
+}
+
+@keyframes arrow-move {
+  from {
+    left: 0px;
+  }
+
+  to {
+    left: 1%;
+  }
+}
