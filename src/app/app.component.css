@@ -46,7 +46,7 @@
 }
 
 .square {
-  background: #2db34a;
+  background: #387876;
   border-radius: 6px;
   cursor: pointer;
   height: 100px;
@@ -63,12 +63,12 @@
 }
 
 .normal {
-  background: #2db34a;
+  background: #387876;
   border-radius: 0%;
 }
 
 .square2 {
-  background: #eed7a1;
+  background:#33828d;
   border-radius: 6px;
   cursor: pointer;
   height: 300px;
@@ -86,6 +86,6 @@
 }
 
 .normal2 {
-  background: #eed7a1;
+  background: #33828d;
   border-radius: 0%;
 }

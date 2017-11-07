@@ -2,3 +2,35 @@
 body {
   background-color: #8a8583;
 }
+
+.panel {
+  margin-top:100px;
+  margin-left:10px;
+  margin-right:10px;
+  background-color: #595a56;
+  min-height: 500px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  border-radius: 30px;
+  padding: 10px;
+}
+
+
+/*ANIMATIONS*/
+
+
+.animateSlideIn {
+  animation-duration: 2.5s;
+  animation-name: slidein;
+  opacity:1;
+}
+
+
+@keyframes slidein {
+  from {
+    opacity:0;
+  }
+
+  to {
+    opacity:1;
+  }
+}

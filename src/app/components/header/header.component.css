@@ -1,20 +1,39 @@
 .header{
+    position:sticky;
+    top:10px;
     display:flex;
     flex-direction: row;
+    font-family: Arial;
+    font-variant: small-caps;
+    margin:10px;
   }
-  
+
   .header ul{
+    height: 70px;
     display:flex;
     flex-direction: row;
     justify-content:flex-end;
-    background-color: yellow;
+    align-content: center;
+    background-color:	#465bcb;
     width: 100%;
+    align-items: center;
+    border-radius: 20px;
   }
-  
+
   .header ul li{
+    height: 20px;
     display:flex;
     margin-left:20px;
-    background-color: red;
+    background-color: #627fe5;
     padding: 20px;
-    
+    align-items: center;
+    margin-right: 20px;
+    border-radius: 20px;
+  }
+  .header ul li a{
+    text-decoration: none;
+  }
+
+  .header ul li a:visited {
+    color:black;
   }
