@@ -15,14 +15,5 @@ export class AppComponent {
   isHidden = true;
   constructor() { }
 
-  @HostListener('window:keydown', ['$event'])
-  keyPressEvent(event: KeyboardEvent) {
-    if (event.keyCode === KEY_CODE.RIGHT_ARROW) {
-      this.isHidden = false;
-    }
 
-    if (event.keyCode === KEY_CODE.LEFT_ARROW) {
-      this.isHidden = true;
-    }
-  }
 }

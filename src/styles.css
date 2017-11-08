@@ -64,22 +64,65 @@ body {
   animation-name: slidein;
   opacity: 1; }
 
-.animateMoveOut {
-  animation-duration: 2s;
-  animation-name: moveOut;
-  position: relative;
-  left: -400%; }
+.animateMoveRight {
+  animation-name: next1, next2;
+  animation-duration: 0.7s,0.7s;
+  animation-delay: 0s,0.7s;
+  /*animation-duration: 2s;
+  animation-name: moveOut, moveIn;*/
+  position: relative; }
+
+.animateMoveLeft {
+  animation-name: back1, back2;
+  animation-duration: 0.7s,0.7s;
+  animation-delay: 0s,0.7s;
+  /*animation-duration: 2s;
+  animation-name: moveOut, moveIn;*/
+  position: relative; }
 
 @keyframes slidein {
   from {
     opacity: 0; }
   to {
     opacity: 1; } }
-@keyframes moveOut {
+@keyframes next1 {
   from {
     left: 0px; }
   to {
-    left: -400%; } }
+    left: -100%; } }
+@keyframes next2 {
+  /*from {
+    left:100%;
+  }
+
+  to {
+    left:0px;
+  }*/
+  0% {
+    left: 100%;
+    width: 0px; }
+  100% {
+    left: 0%;
+    width: 100%; } }
+@keyframes back1 {
+  /*from {
+    left:0px;
+  }
+
+  to {
+    left:100%;
+  }*/
+  0% {
+    left: 0%;
+    width: 100%; }
+  100% {
+    left: 100%;
+    width: 0px; } }
+@keyframes back2 {
+  from {
+    left: -100%; }
+  to {
+    left: 0px; } }
 @keyframes arrow-move {
   from {
     left: 0px; }

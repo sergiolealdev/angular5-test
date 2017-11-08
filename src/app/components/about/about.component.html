@@ -1,3 +1,4 @@
-<div class="panel" [ngClass]="{'animateMoveOut':!isHidden}">
-    About
+<div class="panel" [ngClass]="{'animateMoveRight':isNext,'animateMoveLeft':isBack}">
+   {{content}}
 </div>
+<button (click)="back()">Back</button><button (click)="next()">Next</button>
