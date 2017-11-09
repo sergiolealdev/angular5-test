@@ -1,7 +1,7 @@
 <!--<div id="thePanel" class="panel" [ngClass]="{'animateMoveRight':isNext,'animateMoveLeft':isBack}">
    {{content}}
 </div>-->
-<div class="panel" [@panelState1]="panelState">
+<div #myPanel class="panel" [@panelState1]="panelState">
   {{content}}
 </div>
 <button [@testState]="test">Test</button>
