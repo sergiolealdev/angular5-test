@@ -5,7 +5,7 @@ import {
   state,
   style,
   animate,
-  transition, keyframes, AnimationBuilder
+  transition, keyframes
 } from '@angular/animations';
 @Component ({
     selector:'about',
@@ -26,18 +26,17 @@ import {
       trigger('panelState1', [
         state('next', style({
           position: 'relative',
-          left:'0%'
         })),
         state('back',   style({
           position: 'relative'
         })),
         transition('* => next', animate('1s',keyframes([
-          style({ left: '0%'}),
-          style({ left: '-100%'})
+          style({ transform: 'translateX(0)'}),
+          style({ transform: 'translateX(100%)'})
         ]))),
-        transition('next => back', animate('1s 1s',keyframes([
-          style({ left: '100%'}),
-          style({ left: '0%'}),
+        transition('* => back', animate('1s',keyframes([
+          style({ transform: 'translateX(100%)'}),
+          style({ transform: 'translateX(%)'})
         ])))
       ])
     ]
@@ -45,44 +44,14 @@ import {
 
 export class AboutComponent implements OnInit{
 
-  isBack: boolean;
-  isNext: boolean;
   content: string;
   test:boolean;
   panelState="back";
   @ViewChild('myPanel')
   public myPanel;
 
-  constructor(private _builder: AnimationBuilder) {}
+  constructor() {}
 
-  makeAnimation() {
-    // first build the animation
-    const myAnimation = this._builder.build([
-      style({
-        position: 'relative',
-        left:'0%'
-      }),
-      animate(500, keyframes([
-        style({ left: '0%'}),
-        style({ left: '-100%'})
-      ])),
-      style({
-        position: 'relative',
-      }),
-      animate(500, keyframes([
-        style({ left: '100%',width: '0%'}),
-        style({ left: '0%',width: '50%'}),
-        style({ width: '100%',margin:"10px"})
-      ]))
-    ]);
-
-    // then create a player from it
-    console.log("1");
-    const player = myAnimation.create(this.myPanel.nativeElement, {});
-    console.log("2");
-    player.play();
-    console.log("3");
-  }
   ngOnInit(){
     this.content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet felis ipsum. Sed quis feugiat metus. Morbi pulvinar iaculis pharetra. In id ipsum quis metus convallis ullamcorper eu nec tortor. Aenean scelerisque convallis fringilla. Donec nec diam finibus, consectetur urna nec, aliquam nibh. Fusce eget tellus eget eros gravida mollis.\n" +
       "\n" +
@@ -96,18 +65,12 @@ export class AboutComponent implements OnInit{
   }
 
   next(){
-    /*this.isNext=true;
-    this.isBack=false;*/
-    /*this.panelState="next";
-    this.panelState="back";*/
-    this.makeAnimation();
+    this.panelState="next";
     this.content = "Next";
 
   }
 
   back(){
-    /*this.isNext=false;
-    this.isBack=true;*/
     this.panelState="back";
     this.content = "Back";
   }
