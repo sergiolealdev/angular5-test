@@ -1,9 +1,17 @@
 <!--<div id="thePanel" class="panel" [ngClass]="{'animateMoveRight':isNext,'animateMoveLeft':isBack}">
    {{content}}
 </div>-->
-<div #myPanel class="panel" [@panelState1]="panelState">
-  {{content}}
+<div [@animationTest]="bindingVar" #myPanel class="panel">
+  <div class="content">
+    content1
+  </div>
+  <div class="content">
+    content2
+  </div>
+  <div class="content">
+    content3
+  </div>
 </div>
-<button [@testState]="test">Test</button>
+<button (click)="toggle()">Toggle Fade</button>
 <button (click)="back()">Back</button><button (click)="next()">Next</button>
 
