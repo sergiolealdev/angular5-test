@@ -5,7 +5,7 @@ import {
   state,
   style,
   animate,
-  transition, keyframes, query, stagger
+  transition, keyframes, query, stagger, group
 } from '@angular/animations';
 @Component ({
     selector:'about',
@@ -30,9 +30,9 @@ import {
       trigger('animationTest',[
         transition('* => *', [
           query('.content',  stagger('300ms', [
-            animate('500ms cubic-bezier(0.35, 0, 0.25, 1)' , style({ transform: 'translateX(-100%)'}))
+          animate('800ms cubic-bezier(.75,-0.48,.26,1.52)' , style({ transform: 'translateX(-100%)'}))
           ]),
-            {delay:500}),
+          {delay:500}),
           query(':self', [
             animate(500, style({ opacity:0 }))
           ]),
@@ -43,7 +43,7 @@ import {
             animate(500, style('*'))
           ]),
           query('.content', stagger('300ms',[
-            animate('500ms cubic-bezier(0.35, 0, 0.25, 1)', style({ transform: 'translateX(0%)'}))
+            animate('800ms cubic-bezier(.75,-0.48,.26,1.52)', style({ transform: 'translateX(0%)'}))
           ])),
         ]),
       ])

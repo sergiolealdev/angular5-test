@@ -58,6 +58,9 @@ body {
   border-radius: 30px;
   padding: 10px; }
 
+.content {
+  margin-left: 60px; }
+
 /*ANIMATIONS*/
 .animateSlideIn {
   animation-duration: 2.5s;
