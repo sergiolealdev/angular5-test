@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
+import {Component, HostBinding, HostListener, OnInit, ViewChild} from '@angular/core';
 import {KEY_CODE} from "../../app.component";
 import {
   trigger,
@@ -29,22 +29,26 @@ import {
       ]),
       trigger('animationTest',[
         transition('* => *', [
-          query('.content',  stagger('300ms', [
-          animate('800ms cubic-bezier(.75,-0.48,.26,1.52)' , style({ transform: 'translateX(-100%)'}))
+          group([
+            query('.content',  stagger('300ms', [
+              animate('800ms cubic-bezier(.75,-0.48,.26,1.52)' , style({ transform: 'translateX(-100%)'}))
+              ]),
+            ),
+            query(':self', [
+              animate(1000, style({ opacity:0 }))
+            ]),
           ]),
-          {delay:500}),
-          query(':self', [
-            animate(500, style({ opacity:0 }))
+            query('.content', [
+              animate(1, style({ transform: 'translateX(100%)'}))
+            ]),
+          group([
+            query(':self', [
+              animate(1000, style('*'))
+            ]),
+            query('.content', stagger('300ms',[
+              animate('800ms cubic-bezier(.75,-0.48,.26,1.52)', style({ transform: 'translateX(0%)'}))
+            ])),
           ]),
-          query('.content', [
-            animate(1, style({ transform: 'translateX(100%)'}))
-          ]),
-          query(':self', [
-            animate(500, style('*'))
-          ]),
-          query('.content', stagger('300ms',[
-            animate('800ms cubic-bezier(.75,-0.48,.26,1.52)', style({ transform: 'translateX(0%)'}))
-          ])),
         ]),
       ])
     ]
@@ -55,9 +59,10 @@ export class AboutComponent implements OnInit{
   content: string;
   test:boolean;
   panelState="back";
-  @ViewChild('myPanel')
-  public myPanel;
   bindingVar = '';
+
+  @HostBinding('@animationTest')
+  count:number;
 
   constructor() {}
 
@@ -73,6 +78,10 @@ export class AboutComponent implements OnInit{
   }
   toggle() {
     this.bindingVar === 'fadeOut' ? this.fadeIn() : this.fadeOut();
+  }
+
+  countUp(){
+    this.count++;
   }
 
   next(){

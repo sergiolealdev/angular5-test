@@ -1,17 +1,18 @@
 <!--<div id="thePanel" class="panel" [ngClass]="{'animateMoveRight':isNext,'animateMoveLeft':isBack}">
    {{content}}
 </div>-->
-<div [@animationTest]="bindingVar" #myPanel class="panel">
+<div [@animationTest]="bindingVar" class="panel">
   <div class="content">
-    content1
+    Lorem ipsum dolor sit amet.
   </div>
   <div class="content">
-    content2
+    Lorem ipsum dolor sit amet.
   </div>
   <div class="content">
-    content3
+    Lorem ipsum dolor sit amet.
   </div>
 </div>
 <button (click)="toggle()">Toggle Fade</button>
+<button (click)="countUp()">Count up</button>
 <button (click)="back()">Back</button><button (click)="next()">Next</button>
 
