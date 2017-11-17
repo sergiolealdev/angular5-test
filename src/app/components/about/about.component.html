@@ -1,7 +1,4 @@
-<!--<div id="thePanel" class="panel" [ngClass]="{'animateMoveRight':isNext,'animateMoveLeft':isBack}">
-   {{content}}
-</div>-->
-<div [@animationTest]="bindingVar" class="panel">
+<div [@movePanel]="movement" class="panel">
   <div class="content">
     Lorem ipsum dolor sit amet.
   </div>
@@ -12,7 +9,11 @@
     Lorem ipsum dolor sit amet.
   </div>
 </div>
-<button (click)="toggle()">Toggle Fade</button>
-<button (click)="countUp()">Count up</button>
-<button (click)="back()">Back</button><button (click)="next()">Next</button>
-
+<div class="buttons">
+  <button class="mov" (click)="back()">
+    <fa class="arrow" name="arrow-left"></fa>
+  </button>
+  <button class="mov" (click)="next()">
+    <fa class="arrow" name="arrow-right"></fa>
+  </button>
+</div>

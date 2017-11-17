@@ -8,13 +8,48 @@ body {
   margin-right:10px;
   background-color: #FCFBE3;
   min-height: 150px;
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
   border-radius: 5px;
   padding: 6px;
 }
 
 .content{
-  margin-left: 60px;
+  margin-left: 6px;
   font-family: SansSerif;
-  font-size: 36px;
+  font-size: 1.5em;
+}
+
+
+.mov  {
+  width: 48px;
+  height: 48px;
+  position:relative;
+  margin:20px;
+  top:-50px;
+  border-radius: 50%;
+  background-color: #f47622;
+  color: white;
+  font-size: 18pt;
+
+
+  transition:0.3s cubic-bezier(0.35, 0, 0.25, 1);
+}
+
+.mov:visited {
+  text-decoration: none;
+}
+.mov:hover {
+  transform:scale(1.1);
+  background-color: #E53935;
+}
+
+.mov:active {
+  background-color: #B71C1C;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
 }
